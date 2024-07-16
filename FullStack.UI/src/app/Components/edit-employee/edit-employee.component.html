@@ -1,0 +1,74 @@
+<div class="container my-5">
+  <h1 class="mb-2">EditEmployee</h1>
+  <div class="row">
+    <div class="col-6">
+      <form (ngSubmit)="updateEmployee()">
+        <div class="mb-3">
+          <label for="id" class="form-label">ID</label>
+          <input
+            type="text"
+            class="form-control"
+            id="id"
+            name="id"
+            readonly
+            [(ngModel)]="employee.id"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            [(ngModel)]="employee.name"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            [(ngModel)]="employee.email"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone</label>
+          <input
+            type="number"
+            class="form-control"
+            id="phone"
+            name="phone"
+            [(ngModel)]="employee.phone"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="salary" class="form-label">Salary</label>
+          <input
+            type="salary"
+            class="form-control"
+            id="salary"
+            name="salary"
+            [(ngModel)]="employee.salary"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="department" class="form-label">Department</label>
+          <input
+            type="department"
+            class="form-control"
+            id="department"
+            name="department"
+            [(ngModel)]="employee.department"
+          />
+        </div>
+        <div class="p-2">
+          <button type="submit" class="btn btn-primary p-2 m-2">Update</button>
+          <button type="button" class="btn btn-danger p-2 m-2" (click)="deleteEmployee()">Delete</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

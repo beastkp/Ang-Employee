@@ -1,0 +1,52 @@
+{
+  "Employees": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "phone": 1234567890,
+      "salary": 50000,
+      "department": "Engineering"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "janesmith@example.com",
+      "phone": 2345678901,
+      "salary": 55000,
+      "department": "Marketing"
+    },
+    {
+      "id": "3",
+      "name": "Robert Johnson",
+      "email": "robertjohnson@example.com",
+      "phone": 3456789012,
+      "salary": 60000,
+      "department": "Events"
+    },
+    {
+      "id": "4",
+      "name": "Emily Davis",
+      "email": "emilydavis@example.com",
+      "phone": 4567890123,
+      "salary": 52000,
+      "department": "Human Resources"
+    },
+    {
+      "id": "5",
+      "name": "Michael Brown",
+      "email": "michaelbrown@example.com",
+      "phone": 5678901234,
+      "salary": 58000,
+      "department": "Finance"
+    },
+    {
+      "id": "6",
+      "name": "Mark Henry",
+      "email": "mark@gmail.com",
+      "phone": 123456789,
+      "salary": "123456789",
+      "department": "Creatives"
+    }
+  ]
+}
