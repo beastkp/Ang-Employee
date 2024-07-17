@@ -2,42 +2,45 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError, catchError } from 'rxjs';
 import { Employee } from '../models/employee.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CrudEmployeesService {
-  private _url: string = 'http://localhost:3000/Employees/';
+  // private _url: string = 'http://localhost:3000/Employees/';
+  _url: string = environment.baseApiUrl;
 
   constructor(private http: HttpClient) {}
 
   getEmployees(): Observable<Employee[]> {
     return this.http
-      .get<Employee[]>(this._url)
+      .get<Employee[]>(this._url + '/api/Employee')
       .pipe(catchError(this.handleError<Employee[]>()));
   }
 
   createEmployee(employee: Employee): Observable<Employee> {
+    employee.id = '00000000-0000-0000-0000-000000000000';
     return this.http
-      .post<Employee>(this._url, employee)
+      .post<Employee>(this._url + '/api/Employee', employee)
       .pipe(catchError(this.singleError<Employee>()));
   }
 
   getEmployee(id: string): Observable<Employee> {
     return this.http
-      .get<Employee>(this._url + id)
+      .get<Employee>(this._url + '/api/Employee/' + id)
       .pipe(catchError(this.singleError<Employee>()));
   }
 
   updateEmployee(employee:Employee){
     return this.http
-    .put<Employee>(this._url + employee.id, employee)
+    .put<Employee>(this._url + '/api/Employee/' + employee.id, employee)
     .pipe(catchError(this.singleError<Employee>()));
   }
 
   deleteEmployee(id:string){
     return this.http
-    .delete<Employee>(this._url + id)
+    .delete<Employee>(this._url +'/api/Employee/' + id)
     .pipe(catchError(this.singleError<Employee>()));
   }
 
